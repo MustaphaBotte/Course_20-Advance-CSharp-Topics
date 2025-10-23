@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BusinessLayer">
+      <HintPath>..\..\..\..\..\C# Projects\Course 19\DLMS\DLMS\BusinessLier\bin\Debug\net8.0\BusinessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Data_Access">
+      <HintPath>..\..\..\..\..\C# Projects\Course 19\DLMS\DLMS\Data_Access\bin\Debug\net8.0\Data_Access.dll</HintPath>
+    </Reference>
+    <Reference Include="Entities">
+      <HintPath>..\..\..\..\..\C# Projects\Course 19\DLMS\DLMS\Entities\bin\Debug\net8.0\Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\..\..\C# Projects\Course 19\DLMS\DLMS\DesktopApp\bin\Debug\net8.0-windows\Guna.UI2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
