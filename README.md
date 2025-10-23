@@ -7,7 +7,7 @@ This repository will serve as a **live log** of everything I learn from this cou
 
 ## 📘 Course Overview
 
-course from [Course Link – Programming Advices](https://programmingadvices.com/) .
+course from [Programming Advices](https://programmingadvices.com/) .
 this course covers a wide range of **advanced C# topics**, including:
 
 ### 🔁 Sending Data Between Forms
