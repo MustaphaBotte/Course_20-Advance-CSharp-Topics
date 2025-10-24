@@ -11,18 +11,18 @@ class Logger
     }
     public void LogMessage(string Message)
     {
-        //you can use this method
-        foreach (LogAction Handler in logAction.GetInvocationList())
-        {
+           //you can use this method if you want to invoke others even if error occured (if ant void has an error the other voids will not notified)
+           //(will slow  your program but its ok)
+       
             try
             {
-                Handler(Message);
+                logAction(Message);
             }
             catch
             {
-                Console.WriteLine($"Error Occured in {Handler.Method.Name}");
+                Console.WriteLine($"Error Occured in {logAction.Method.Name}");
             }
-        }
+        
         //  logAction?.Invoke(Message);
     }
 }
