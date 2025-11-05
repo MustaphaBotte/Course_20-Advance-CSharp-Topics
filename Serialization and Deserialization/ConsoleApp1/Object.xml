@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPerson xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Person>
+    <Name>Mustapha</Name>
+    <Age>21</Age>
+    <N_No>WA4545</N_No>
+  </Person>
+  <Person>
+    <Name>Ahmed</Name>
+    <Age>21</Age>
+    <N_No>WA4545</N_No>
+  </Person>
+  <Person>
+    <Name>Mohammed</Name>
+    <Age>21</Age>
+    <N_No>WA4545</N_No>
+  </Person>
+  <Person>
+    <Name>Said</Name>
+    <Age>21</Age>
+    <N_No>WA4545</N_No>
+  </Person>
+  <Person>
+    <Name>Karim</Name>
+    <Age>21</Age>
+    <N_No>WA4545</N_No>
+  </Person>
+  <Person>
+    <Name>Mounir</Name>
+    <Age>21</Age>
+    <N_No>WA4545</N_No>
+  </Person>
+</ArrayOfPerson>
