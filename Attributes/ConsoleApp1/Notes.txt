@@ -1,0 +1,10 @@
+﻿In C#, attributes provide a way to add metadatato your code. 
+•They are used to provide additional information about elements in your code, such as classes, methods, properties, and so on.
+•Attributes are defined using square brackets [] and are placed above the code element they are associated with
+
+-------------Why Attributes-----------------
+
+•Attributes play a crucial role in:•Enhancing code readability.
+•Providing additional information (Meta Data)
+•Enabling frameworks and tools to understand and process your code more effectively.
+•They are widely used in areas like serialization, documentation, testing, and more
