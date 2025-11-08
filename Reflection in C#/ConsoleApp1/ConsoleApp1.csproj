@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BCrypt.Net-Next">
+      <HintPath>..\..\..\C# Projects\Course 19\DLMS\DLMS\DesktopApp\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
+    <Reference Include="DesktopApp">
+      <HintPath>..\..\..\C# Projects\Course 19\DLMS\DLMS\DesktopApp\bin\Debug\net8.0-windows\DesktopApp.dll</HintPath>
+    </Reference>
+    <Reference Include="Entities">
+      <HintPath>..\..\..\C# Projects\Course 19\DLMS\DLMS\Entities\bin\Debug\net8.0\Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\C# Projects\Course 19\DLMS\DLMS\DesktopApp\bin\Debug\net8.0-windows\Guna.UI2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
