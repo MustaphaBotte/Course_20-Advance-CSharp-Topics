@@ -26,7 +26,7 @@ namespace ConsoleApp1
                 return Encoding.UTF8.GetString(DecryptedData);
             }
         }
-        static void Main(string[] args)
+        static void Main4(string[] args)//rename it to main
         {
             string Data = "HEllo world";
 
