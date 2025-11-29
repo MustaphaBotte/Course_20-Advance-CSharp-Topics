@@ -14,19 +14,19 @@ namespace WindowsFormsApp1
    
     public partial class GetTastInfoFrm: Form
     {
-        public class TastInfo : EventArgs
+        public class TaskInfo : EventArgs
         {
             public int ID;
             public string Url = "";
             public string DownloadPath = "";
             
-            public TastInfo(string url, string downloadPath)
+            public TaskInfo(string url, string downloadPath)
             {
                 Url = url;
                 DownloadPath = downloadPath;
             }
         }
-        public event EventHandler<TastInfo> OnDownloadInfoReady = delegate { };
+        public event EventHandler<TaskInfo> OnDownloadInfoReady = delegate { };
         public GetTastInfoFrm()
         {
             InitializeComponent();
@@ -66,7 +66,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Please Fill the url and download path fields", "Required info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            this.OnDownloadInfoReady?.Invoke(this, new TastInfo(Url, Downpath));
+            this.OnDownloadInfoReady?.Invoke(this, new TaskInfo(Url, Downpath));
             this.UrlTextBox.Clear();
         }
 

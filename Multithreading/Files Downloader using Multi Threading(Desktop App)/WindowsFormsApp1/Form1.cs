@@ -22,30 +22,30 @@ namespace WindowsFormsApp1
         private void AddTastBtn_Click(object sender, EventArgs e)
         {
             GetTastInfoFrm Frm = new GetTastInfoFrm();
-            Frm.OnDownloadInfoReady += (object snd, GetTastInfoFrm.TastInfo tastInfo) =>
+            Frm.OnDownloadInfoReady += (object snd, GetTastInfoFrm.TaskInfo taskinfo) =>
             {               
                // ((Form)snd).Close();
-                AddDataToTheGrid(tastInfo);
+                AddDataToTheGrid(taskinfo);
             };
             if(!Frm.IsDisposed)
                  Frm.Show();
         }
-        private void AddDataToTheGrid(TastInfo tastInfo)
+        private void AddDataToTheGrid(TaskInfo taskinfo)
         {
             int row = DownloadDataGrid.Rows.Add();
-            DownloadDataGrid.Rows[row].Cells[0].Value = tastInfo.Url;
-            DownloadDataGrid.Rows[row].Cells[1].Value = tastInfo.DownloadPath;
+            DownloadDataGrid.Rows[row].Cells[0].Value = taskinfo.Url;
+            DownloadDataGrid.Rows[row].Cells[1].Value = taskinfo.DownloadPath;
             DownloadDataGrid.Rows[row].Cells[2].Value = "0%";         
             DownloadDataGrid.Rows[row].Cells[3].Value = "Start";
-            tastInfo.ID = row;
-            DownloadDataGrid.Rows[row].Tag = tastInfo;
+            taskinfo.ID = row;
+            DownloadDataGrid.Rows[row].Tag = taskinfo;
         }
-        private void ManageThreads(EventArgs tastInfo)
+        private void ManageThreads(EventArgs taskinfo)
         {          
-           Thread t = new Thread(() => { Download((TastInfo)tastInfo, ((TastInfo)tastInfo).ID); });
+           Thread t = new Thread(() => { Download((TaskInfo)taskinfo, ((TaskInfo)taskinfo).ID); });
            t.Start();      
         }
-        private void Download(TastInfo tastInfo, int RowIndex)
+        private void Download(TaskInfo taskinfo, int RowIndex)
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls13;
 
@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
                                this.DownloadDataGrid.Rows[RowIndex].Cells[2].Value = progress<0 ? 0+"%" : ((int)progress +"%");
                            }));
                        };
-                       web.DownloadDataAsync(new Uri(tastInfo.Url), RowIndex);
+                       web.DownloadDataAsync(new Uri(taskinfo.Url), RowIndex);
                     this.DownloadDataGrid.Rows[RowIndex].Cells[3].Value = "In Progress";
 
                     web.DownloadDataCompleted += (sender, e) =>
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
                            data = e.Result;
                            this.DownloadDataGrid.Rows[RowIndex].Cells[3].Value = "Open File Explorer";
                            this.DownloadDataGrid.Rows[RowIndex].Cells[2].Value = "100%";
-                           SaveToFile(tastInfo, data);
+                           SaveToFile(taskinfo, data);
                        };
                       
                    }
@@ -197,20 +197,20 @@ namespace WindowsFormsApp1
 
             return "bin"; // binary as fallback
         }
-        private void SaveToFile(TastInfo tastInfo, byte[] data)
+        private void SaveToFile(TaskInfo taskinfo, byte[] data)
         {
             try
             {
-                string FileName = tastInfo.Url.Replace("https://", "").Replace("http://", "").Replace("/", "_");
+                string FileName = taskinfo.Url.Replace("https://", "").Replace("http://", "").Replace("/", "_");
                 string Extention = "."+DetectFileType(data);
 
                 int index = 0;
-                while (File.Exists(Path.Combine(tastInfo.DownloadPath, FileName + Extention)))
+                while (File.Exists(Path.Combine(taskinfo.DownloadPath, FileName + Extention)))
                 {
                     FileName += $"{index}";
                     index++;
                 }
-                using (FileStream stream = new FileStream(Path.Combine(tastInfo.DownloadPath, FileName +Extention), FileMode.Create))
+                using (FileStream stream = new FileStream(Path.Combine(taskinfo.DownloadPath, FileName +Extention), FileMode.Create))
                 {
                     stream.Write(data, 0, data.Length);
                 }
@@ -232,12 +232,12 @@ namespace WindowsFormsApp1
         {
             if (DownloadDataGrid.Columns[e.ColumnIndex].Name=="ActionBtn" && DownloadDataGrid.Rows[e.RowIndex]?.Cells[e.ColumnIndex]?.Value.ToString()=="Start")
             {
-                TastInfo TaskInfo = (TastInfo)DownloadDataGrid.Rows[e.RowIndex].Tag;
+                TaskInfo TaskInfo = (TaskInfo)DownloadDataGrid.Rows[e.RowIndex].Tag;
                 ManageThreads(TaskInfo);
             }
             else if (DownloadDataGrid.Rows[e.RowIndex]?.Cells[e.ColumnIndex]?.Value.ToString() == "Open File Explorer")
             {
-                Process.Start(new ProcessStartInfo("explorer.exe", ((TastInfo)DownloadDataGrid.Rows[e.RowIndex].Tag).DownloadPath));
+                Process.Start(new ProcessStartInfo("explorer.exe", ((TaskInfo)DownloadDataGrid.Rows[e.RowIndex].Tag).DownloadPath));
             }
             if(e.Button == MouseButtons.Right)
             {
