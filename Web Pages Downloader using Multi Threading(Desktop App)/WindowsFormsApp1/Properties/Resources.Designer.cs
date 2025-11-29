@@ -69,15 +69,5 @@ namespace WindowsFormsApp1.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap technology_binary_numbers_code_wallpaper_thumb {
-            get {
-                object obj = ResourceManager.GetObject("technology-binary-numbers-code-wallpaper-thumb", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
