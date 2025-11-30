@@ -3,7 +3,7 @@ namespace ConsoleApp1
 {
     internal class PermissionToWrite
     {       
-        static void Main(string[] args)
+        static void Main5(string[] args)//rename it to Main if you wanna run this file
         {             
             try
             {

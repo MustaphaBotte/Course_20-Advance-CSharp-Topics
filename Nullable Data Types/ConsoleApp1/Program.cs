@@ -20,11 +20,12 @@ class Entry2
         int TempID = ID ?? 0; //assign 0 to temp if ID isnull otherwise affect the id value
         Console.WriteLine(TempID);
 
-        string? Name = null;
+        string? Name = null;//nullable
         Console.WriteLine("My name is "+Name?.ToLower()); //condition
 
-        DateTime? date = null;
+        DateTime? date = DateTime.Now;
         Console.WriteLine(((DateTime)date).Day);
+        date = null; //null datetime
 
     }
 }

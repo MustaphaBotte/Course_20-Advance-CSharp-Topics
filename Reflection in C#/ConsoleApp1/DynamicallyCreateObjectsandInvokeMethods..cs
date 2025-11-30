@@ -68,7 +68,7 @@ namespace _Reflection
             MethodInfo[] methodInfos = ClassType.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance);
             foreach (MethodInfo methodInfo in methodInfos)
             {
-                if (methodInfo.IsSpecialName)
+                if (methodInfo.IsSpecialName)//setters and getters
                     continue;
                 if (methodInfo.ReturnType == typeof(void))
                 {

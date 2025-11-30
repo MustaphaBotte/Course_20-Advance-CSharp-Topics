@@ -2,7 +2,7 @@
 
 namespace ConsoleApp1
 {
-    internal class WritingFromRegistry
+    internal class WritingInRegistry
     {
         static void Main1(string[] args)//rename it to Main if you wanna run this file
         {

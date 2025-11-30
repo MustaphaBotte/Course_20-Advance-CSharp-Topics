@@ -19,7 +19,7 @@ public partial class Person // partial class for privates cause message pack gen
 
     [IgnoreDataMember]
     [Key(3)]
-    private int PrivateAttribut=100; //this will be serialized because [DataMember]
+    private int PrivateAttribut=100; //this will be serialized because if the json function
 
     [IgnoreDataMember]
     public string N_No

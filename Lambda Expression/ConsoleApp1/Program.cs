@@ -35,9 +35,8 @@ class Entry
                 return count;
             };
         }
-
         var counter = CreateCounter();
-        Console.WriteLine(counter()); // Output: 1
+        Console.WriteLine(counter.Invoke()); // Output: 1
         Console.WriteLine(counter()); // Output: 2
         Console.WriteLine(counter()); // Output: 3
     }

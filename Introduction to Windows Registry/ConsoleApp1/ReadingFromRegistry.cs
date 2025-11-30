@@ -2,7 +2,7 @@
 
 namespace ConsoleApp1
 {
-    internal class ReadingToRegistry
+    internal class ReadingFromregistry
     {
         static void Main2(string[] args)//rename it to Main if you wanna run this file
         {

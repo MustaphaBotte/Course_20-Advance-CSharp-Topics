@@ -1,4 +1,4 @@
-﻿delegate bool Holder(int x);
+﻿ddelegate bool Holder(int x);
 public class Program
 {
     class Calculator()

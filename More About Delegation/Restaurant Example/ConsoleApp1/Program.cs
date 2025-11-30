@@ -134,7 +134,7 @@ class Manager
         this.RoleName = RoleName;
         kitchenStation1.IngredientInMinimumLevel += CallSupliers;
 
-    }
+    }    
     private void CallSupliers(object? sender)
     {
         IngredientInMinimumLevel?.Invoke();
