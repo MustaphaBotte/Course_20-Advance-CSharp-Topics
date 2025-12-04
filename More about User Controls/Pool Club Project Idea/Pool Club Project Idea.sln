@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pool Club Project Idea", "Pool Club Project Idea.csproj", "{30DB50C8-9A34-4912-93E7-351FB8B6222E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30DB50C8-9A34-4912-93E7-351FB8B6222E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30DB50C8-9A34-4912-93E7-351FB8B6222E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30DB50C8-9A34-4912-93E7-351FB8B6222E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30DB50C8-9A34-4912-93E7-351FB8B6222E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA615E56-E05F-46AA-9EC6-413E799C2A58}
+	EndGlobalSection
+EndGlobal
