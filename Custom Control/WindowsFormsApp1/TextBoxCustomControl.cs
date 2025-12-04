@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
 
         protected override void OnPaint(PaintEventArgs pe)
         {
-          //  base.OnPaint(pe);
+         base.OnPaint(pe);
         }
         public enum EnType { Text,Numeric,Email,Phone}
         public EnType Type
